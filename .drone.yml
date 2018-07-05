@@ -3,5 +3,3 @@ pipeline:
     image: maven
     commands:
       - mvn clean test
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
