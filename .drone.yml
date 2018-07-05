@@ -1,9 +1,7 @@
-clone:
-  git:
-    image: plugins/git
-    tags: true
 pipeline:
-  java:
-    image: ubuntu
+  build:
+    image: maven
     commands:
-      - env
+      - mvn clean test
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
