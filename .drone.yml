@@ -4,5 +4,5 @@ pipeline:
     commands:
       - mvn clean test
      volumes:
-      - /root/.m2:~/.m2
+      - /root/.m2:/root/.m2
       - /var/run/docker.sock:/var/run/docker.sock
