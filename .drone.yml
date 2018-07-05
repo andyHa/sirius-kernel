@@ -3,5 +3,5 @@ pipeline:
     image: maven
     commands:
       - mvn clean test
-     volumes:
+    volumes:
       - /root/.m2:/root/.m2
