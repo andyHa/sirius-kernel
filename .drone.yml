@@ -2,7 +2,7 @@ pipeline:
   build:
     image: maven
     commands:
-      - mvn clean test
+      - mvn test
     volumes:
       - /root/.m2:/root/.m2
       - /root/.gnupg:/root/.gnupg
