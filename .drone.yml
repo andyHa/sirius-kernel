@@ -1,8 +1,14 @@
-pipeline:
+clone:
+  git:
+    image: plugins/git
+    volumes:
+    - /var/repos/${CI_SYSTEM_HOST}/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}pipeline:
   build:
     image: maven
     commands:
+      - env
       - mvn test
     volumes:
       - /root/.m2:/root/.m2
       - /root/.gnupg:/root/.gnupg
+      - /var/repos/${CI_SYSTEM_HOST}/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}pipeline:
