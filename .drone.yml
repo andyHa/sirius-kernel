@@ -7,7 +7,7 @@ clone:
     image: maven
     commands:
       - env
-      - mvn test
+      - mvn clean test
     volumes:
       - /root/.m2:/root/.m2
       - /root/.gnupg:/root/.gnupg
