@@ -2,7 +2,7 @@ clone:
   git:
     image: plugins/git
     volumes:
-    - /var/repos/${CI_SYSTEM_HOST}/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}pipeline:
+    - /var/repos/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}pipeline:
   build:
     image: maven
     commands:
