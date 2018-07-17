@@ -1,8 +1,11 @@
+workspace:
+  base: /drone
+  path: src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}/${CI_SYSTEM_HOST}
 clone:
   git:
     image: plugins/git
     volumes:
-    - /var/repos/${CI_SYSTEM_HOST}/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
+    - /var/repos/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
 pipeline:
   build:
     image: maven
@@ -12,4 +15,4 @@ pipeline:
     volumes:
       - /root/.m2:/root/.m2
       - /root/.gnupg:/root/.gnupg
-      - /var/repos/${CI_SYSTEM_HOST}/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
+      - /var/repos/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
